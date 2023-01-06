@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package tasking;
+
+message Metadata {
+    optional string filename = 1;
+    optional string lineNumber = 2;
+    optional string gitAuthor = 3;
+    }
+
+message Todo {
+    required string title = 1;
+    optional string priority = 2;
+    optional Metadata meta = 3;
+    // all fields have been created with default values
+    // when a Todo object is instantiated
+}
+
+message TodoList {
+    repeated Todo todos = 1;
+}
